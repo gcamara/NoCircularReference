@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GCamara - Avoiding Circular References </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+<div style="margin: 10px" ng-app="app" ng-controller="MainController as vm">
+    <form novalidate class="form-inline">
+      <div class="form-group">
+         <input type="text" placeholder="Type something..." class="form-control" ng-model="vm.logs" />
+         <button type="submit" class="btn btn-primary" ng-click="vm.log()">Testar Log</button>
+      </div>
+    </form>
+  <hr/>
+     <span class="label" ng-class="{'label-info': vm.resultado.type == 'success', 'label-danger': vm.resultado.type == 'error'}" style="padding: 10px" ng-show="vm.resultado">{{vm.resultado.msg}}</span>
+</body>
+</html>
